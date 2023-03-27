@@ -31,12 +31,40 @@ body {
   min-height: 100vh;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgb(21, 21, 21);
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+input,
+textarea {
+  width: 85%;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-family: inherit;
+}
+
 button {
+  align-self: flex-end;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
