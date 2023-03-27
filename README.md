@@ -1,15 +1,15 @@
-<<<<<<< HEAD
+Title: PanPoster - Multi-Group Poster for Facebook Admins
+
+Tech: Express.js, React, Redux, and TLK.
+
+Description:
+
+PanPoster is a user-friendly web application for Facebook group administrators.
+With PanPoster, you can manage and share content across multiple Facebook groups you own.
+By using the Facebook API, it allows you to create and post the same message to all of your groups with just a few clicks.
+Please note that it can only post to groups where the user is an admin to ensure a secure and controlled environment.
+PanPoster helps streamline your content management process and maintain compliance with Facebook's guidelines.
+
 How to get your access token:
-1. https://developers.facebook.com/docs/marketing-apis/overview/authentication/
-=======
-# PanPoster
-Title: Multi-Group Poster for Facebook Admins
 
-Description: Multi-Group Poster is a powerful and user-friendly web application built using Express.js, React, Redux, and TLK. 
-It enables Facebook group administrators to efficiently manage and share content across multiple groups they own. 
-By leveraging the Facebook API, this application allows you to create and post the same message 
-to all of your Facebook groups with just a few clicks, streamlining your content management process.
-
-Please note that due to Facebook API restrictions, this application can only post to groups where the user is an admin. 
-This ensures a secure and controlled environment for sharing content within your own communities while maintaining compliance with Facebook's guidelines.
->>>>>>> bf35d481efd72b656d4fe50a437cb6d7b05b819f
+Visit https://developers.facebook.com/docs/marketing-apis/overview/authentication/
