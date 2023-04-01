@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import './App.css';
 import GroupForm from './components/GroupsForm';
 
 function App() {
