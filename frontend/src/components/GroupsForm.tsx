@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import axios, { AxiosResponse } from "axios";
 
 interface GroupFormProps {
-  onSubmit: (data: any) => Promise<AxiosResponse>;
+  onSubmit: (data: any) => Promise<{ status: number; message: string }>;
 }
 
 const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
@@ -10,7 +9,6 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
   const [message, setMessage] = useState("");
   const [accessToken, setAccessToken] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
-  //test 2
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,12 +19,8 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
       accessToken,
     };
 
-    try {
-      const response = await onSubmit(data);
-      setStatusMessage("Successfully posted to groups.");
-    } catch (error) {
-      setStatusMessage("Error posting to groups.");
-    }
+    const response = await onSubmit(data);
+    setStatusMessage(response.message);
   };
 
   return (
@@ -45,6 +39,7 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
         <textarea
           id="message"
           value={message}
+          className="overflow-auto"
           onChange={(e) => setMessage(e.target.value)}
         />
       </div>

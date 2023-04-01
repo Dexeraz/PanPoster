@@ -21,7 +21,7 @@ router.post("/", async (req, res) => {
   
     if (failedPosts.length > 0) {
       res.status(400).json({
-        message: "Some posts failed.",
+        message: "Please check if your access token is correct.",
         failedPosts,
       });
     } else {

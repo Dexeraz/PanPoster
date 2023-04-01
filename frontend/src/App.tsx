@@ -1,27 +1,32 @@
-import React from 'react';
-import axios, { AxiosResponse } from 'axios';
-import GroupForm from './components/GroupsForm';
+import React from "react";
+import axios, { AxiosError, AxiosResponse } from "axios";
+import GroupForm from "./components/GroupsForm";
 
 function App() {
   const handleSubmit = async (data: {
     groupIds: string[];
     message: string;
     accessToken: string;
-  }) => {
-    return new Promise<AxiosResponse>(async (resolve, reject) => {
-      try {
-        const response = await axios.post(
-          "http://localhost:3000/post-to-groups",
-          data
-        );
+  }): Promise<{ status: number; message: string }> => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/post-to-groups",
+        data
+      );
 
-        console.log(response.data);
-        resolve(response);
-      } catch (error) {
-        console.error("Error posting to groups:", error);
-        reject(error);
+      return { status: response.status, message: response.data.message };
+    } catch (error) {
+      console.error("Error posting to groups:", error);
+
+      if (axios.isAxiosError(error)) {
+        return {
+          status: error.response?.status || 500,
+          message: error.response?.data?.message || "Unknown error",
+        };
+      } else {
+        return { status: 500, message: "Unknown error" };
       }
-    });
+    }
   };
 
   return (
