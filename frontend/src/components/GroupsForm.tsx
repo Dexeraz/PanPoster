@@ -28,7 +28,7 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="text-white p-4 rounded shadow-md space-y-4 w-full max-w-md bg-gray-800"
+      className="text-white p-4 rounded shadow-md space-y-4 w-full max-w-md bg-gray-800 m-6"
     >
       <InputField
         label="Group IDs (separated with comma):"
