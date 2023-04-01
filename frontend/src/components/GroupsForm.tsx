@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import InputField from "./InputField";
+import TextAreaField from "./TextAreaField";
 
 interface GroupFormProps {
   onSubmit: (data: any) => Promise<{ status: number; message: string }>;
@@ -25,33 +27,26 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="groupIds">Group IDs (separated with comma):</label>
-        <input
-          type="text"
-          id="groupIds"
-          value={groupIds}
-          onChange={(e) => setGroupIds(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="message">Post content:</label>
-        <textarea
-          id="message"
-          value={message}
-          className="overflow-auto"
-          onChange={(e) => setMessage(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="accessToken">Access Token:</label>
-        <input
-          type="text"
-          id="accessToken"
-          value={accessToken}
-          onChange={(e) => setAccessToken(e.target.value)}
-        />
-      </div>
+      <InputField
+        label="Group IDs (separated with comma):"
+        id="groupIds"
+        type="text"
+        value={groupIds}
+        onChange={(e) => setGroupIds(e.target.value)}
+      />
+      <TextAreaField
+        label="Post content:"
+        id="message"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <InputField
+        label="Access Token:"
+        id="accessToken"
+        type="text"
+        value={accessToken}
+        onChange={(e) => setAccessToken(e.target.value)}
+      />
       <button type="submit">Submit</button>
       <p className="mt-4 text-white">{statusMessage}</p>
     </form>
