@@ -1,6 +1,7 @@
 import React from "react";
 import axios, { AxiosError, AxiosResponse } from "axios";
 import GroupForm from "./components/GroupsForm";
+import Hero from "./components/Hero";
 
 function App() {
   const handleSubmit = async (data: {
@@ -30,8 +31,11 @@ function App() {
   };
 
   return (
-    <div className="App min-h-screen bg-gray-900 flex items-center justify-center">
-      <GroupForm onSubmit={handleSubmit} />
+    <div className="App min-h-screen bg-gray-900 flex flex-col items-center justify-start pt-8">
+      <Hero />
+      <div className="w-full max-w-md mt-8">
+        <GroupForm onSubmit={handleSubmit} />
+      </div>
     </div>
   );
 }
