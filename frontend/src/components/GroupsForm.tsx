@@ -25,7 +25,7 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
     setStatusMessage(response.message);
   };
 
-  return (
+  return (//
     <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
       <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-4">
         Share your post!
