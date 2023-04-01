@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import axios, { AxiosResponse } from "axios";
 
 interface GroupFormProps {
-  onSubmit: (data: any) => Promise<void>;
+  onSubmit: (data: any) => Promise<AxiosResponse>;
 }
 
 const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
@@ -10,23 +11,20 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
   const [accessToken, setAccessToken] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (!groupIds || !message || !accessToken) {
-      setStatusMessage("Please fill in all the fields.");
-      return;
-    }
+    const parsedGroupIds = groupIds.split(",").map((id) => id.trim());
+    const data = {
+      groupIds: parsedGroupIds,
+      message,
+      accessToken,
+    };
 
     try {
-      await onSubmit({
-        groupIds: groupIds.split(",").map((id) => id.trim()),
-        message,
-        accessToken,
-      });
+      const response = await onSubmit(data);
       setStatusMessage("Successfully posted to groups.");
     } catch (error) {
-      setStatusMessage("Error posting to groups: " + error);
+      setStatusMessage("Error posting to groups.");
     }
   };
 
