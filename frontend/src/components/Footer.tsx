@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           >
             <img
               src="https://i.ibb.co/QFX6TC3/pngwing-com-2.png"
-              className="h-8 mr-3"
+              className="h-10 mr-1"
               alt="Github Logo"
             />
             <span className="self-center text-2xl font-semibold whitespace-nowrap">

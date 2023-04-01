@@ -15,7 +15,7 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
 }) => {
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id} className="text-gray-200">{label}</label>
       <textarea
         id={id}
         value={value}

@@ -26,36 +26,39 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="text-white p-4 rounded shadow-md space-y-4 w-full max-w-md bg-gray-800 m-6"
-    >
-      <InputField
-        label="Group IDs (separated with comma):"
-        id="groupIds"
-        value={groupIds}
-        onChange={(e) => setGroupIds(e.target.value)}
-      />
-      <TextAreaField
-        label="Post content:"
-        id="message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <InputField
-        label="Access Token:"
-        id="accessToken"
-        value={accessToken}
-        onChange={(e) => setAccessToken(e.target.value)}
-      />
-      <button
-        type="submit"
-        className="self-end px-4 py-2 font-semibold bg-gray-700 hover:bg-gray-600 rounded transition-colors duration-200"
-      >
-        Submit
-      </button>
-      <p className="mt-4 text-white">{statusMessage}</p>
-    </form>
+    <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+      <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-4">
+        Share your post!
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <InputField
+          label="Group IDs:"
+          id="groupIds"
+          value={groupIds}
+          onChange={(e) => setGroupIds(e.target.value)}
+          placeholder="Example: 123456789000005,113355779900005"
+        />
+        <TextAreaField
+          label="Post content:"
+          id="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+        <InputField
+          label="Access Token:"
+          id="accessToken"
+          value={accessToken}
+          onChange={(e) => setAccessToken(e.target.value)}
+        />
+        <button
+          type="submit"
+          className="px-4 py-2 font-semibold bg-blue-600 dark:bg-blue-500 text-white hover:bg-blue-500 dark:hover:bg-blue-400 rounded transition-colors duration-200"
+        >
+          Submit
+        </button>
+        <p className="mt-4 text-gray-900 dark:text-gray-400">{statusMessage}</p>
+      </form>
+    </div>
   );
 };
 

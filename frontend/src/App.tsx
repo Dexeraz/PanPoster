@@ -38,10 +38,10 @@ function App() {
       <div className="App flex flex-col min-h-screen bg-gray-900">
         <div className="flex-grow flex flex-col">
           <Hero />
-          <div className="flex-grow flex items-center justify-center">
+          <div className="flex-grow flex items-center justify-center mb-12">
             <GroupForm onSubmit={handleSubmit} />
           </div>
-        </div>
+        </div >
         <Footer />
       </div>
     </div>

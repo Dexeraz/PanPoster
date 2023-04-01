@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             Facebook API Token
           </a>
           <h1 className="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">
-            Pan Poster: Post to multiple Facebook groups
+            Pan Poster
           </h1>
           <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">
             Pan Poster is a tool that allows you to post a single message to
@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
             <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
-              Access Token Knowledge
+              How to get your Access Token? 
             </h2>
             <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
               To use Pan Poster, you will need to generate an access token from
