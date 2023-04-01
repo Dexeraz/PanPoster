@@ -13,3 +13,13 @@ PanPoster helps streamline your content management process and maintain complian
 How to get your access token:
 
 Visit https://developers.facebook.com/docs/marketing-apis/overview/authentication/
+
+
+Frontend:
+
+![image](https://user-images.githubusercontent.com/50703222/228056756-d249d2b8-1588-47b7-bf64-ef7ce37151d1.png)
+
+
+Backend:
+
+![image](https://user-images.githubusercontent.com/50703222/228056732-bca315b6-54af-4a26-b39a-e13aceb57c35.png)
