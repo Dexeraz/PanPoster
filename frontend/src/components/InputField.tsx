@@ -1,26 +1,31 @@
 import React from "react";
 
-interface InputFieldProps {
+interface TextAreaFieldProps {
   label: string;
   id: string;
-  type: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const InputField: React.FC<InputFieldProps> = ({
+const TextAreaField: React.FC<TextAreaFieldProps> = ({
   label,
   id,
-  type,
   value,
   onChange,
 }) => {
   return (
     <div>
-      <label htmlFor={id}>{label}</label>
-      <input type={type} id={id} value={value} onChange={onChange} />
+      <label htmlFor={id} className="block font-medium mb-2">
+        {label}
+      </label>
+      <textarea
+        id={id}
+        value={value}
+        className="w-full px-3 py-2 border border-gray-600 rounded shadow-sm focus:outline-none focus:border-blue-500 bg-gray-700 text-white overflow-auto"
+        onChange={onChange}
+      />
     </div>
   );
 };
 
-export default InputField;
+export default TextAreaField;

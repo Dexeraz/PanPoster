@@ -19,7 +19,7 @@ const TextAreaField: React.FC<TextAreaFieldProps> = ({
       <textarea
         id={id}
         value={value}
-        className="overflow-auto"
+        className="w-full px-3 py-2 border border-gray-600 rounded shadow-sm focus:outline-none focus:border-blue-500 bg-gray-700 text-white overflow-auto"
         onChange={onChange}
       />
     </div>

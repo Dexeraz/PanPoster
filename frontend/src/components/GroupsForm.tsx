@@ -26,11 +26,13 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="text-white p-4 rounded shadow-md space-y-4 w-full max-w-md bg-gray-800"
+    >
       <InputField
         label="Group IDs (separated with comma):"
         id="groupIds"
-        type="text"
         value={groupIds}
         onChange={(e) => setGroupIds(e.target.value)}
       />
@@ -43,11 +45,15 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
       <InputField
         label="Access Token:"
         id="accessToken"
-        type="text"
         value={accessToken}
         onChange={(e) => setAccessToken(e.target.value)}
       />
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="self-end px-4 py-2 font-semibold bg-gray-700 hover:bg-gray-600 rounded transition-colors duration-200"
+      >
+        Submit
+      </button>
       <p className="mt-4 text-white">{statusMessage}</p>
     </form>
   );

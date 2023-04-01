@@ -30,7 +30,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App min-h-screen bg-gray-900 flex items-center justify-center">
       <GroupForm onSubmit={handleSubmit} />
     </div>
   );
