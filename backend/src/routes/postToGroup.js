@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-//test 1
 
 router.post("/", async (req, res) => {
     const { groupIds, message, accessToken } = req.body;
