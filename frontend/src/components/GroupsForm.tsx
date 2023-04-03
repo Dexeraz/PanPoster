@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import InputField from "./InputField";
 import TextAreaField from "./TextAreaField";
+import { postToGroups } from "./../api"
 
-interface GroupFormProps {
-  onSubmit: (data: any) => Promise<{ status: number; message: string }>;
-}
 
-const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
+interface GroupFormProps {}
+
+
+const GroupForm: React.FC<GroupFormProps> = () => {
   const [groupIds, setGroupIds] = useState("");
   const [message, setMessage] = useState("");
   const [accessToken, setAccessToken] = useState("");
@@ -21,7 +22,7 @@ const GroupForm: React.FC<GroupFormProps> = ({ onSubmit }) => {
       accessToken,
     };
 
-    const response = await onSubmit(data);
+    const response = await postToGroups(data); // Use postToGroups instead of onSubmit
     setStatusMessage(response.message);
   };
 
