@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const { postToGroup } = require("../controllers/groupController"); 
 
 router.post("/", async (req, res) => {
     const { groupIds, message, accessToken } = req.body;

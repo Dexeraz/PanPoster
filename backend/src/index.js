@@ -5,7 +5,7 @@ const cors = require("cors");
 const rateLimit = require("./middleware/rateLimit");
 const cacheMiddleware = require("./middleware/cache");
 
-const postToGroupsRoute = require("./routes/postToGroup");
+const postToGroupsRoute = require("./routes/postToGroup"); 
 
 app.use(express.json());
 app.use(cors());

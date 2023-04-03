@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             from the Facebook API.
           </p>
           <a
-            href="https://developers.facebook.com/docs/facebook-login/access-tokens/"
+            href="https://developers.facebook.com/docs/marketing-apis/overview/authentication/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
@@ -45,16 +45,14 @@ const Hero: React.FC = () => {
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-              ></path>
+              <path d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"></path>
             </svg>
           </a>
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
             <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
-              How to get your Access Token? 
+              What is an Access Token?
             </h2>
             <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
               To use Pan Poster, you will need to generate an access token from
