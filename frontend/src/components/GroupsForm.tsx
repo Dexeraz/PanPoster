@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import InputField from "./InputField";
 import TextAreaField from "./TextAreaField";
-import { postToGroups } from "./../api"
-
+import { postToGroups } from "./../api";
 
 interface GroupFormProps {}
-
 
 const GroupForm: React.FC<GroupFormProps> = () => {
   const [groupIds, setGroupIds] = useState("");
@@ -15,6 +13,15 @@ const GroupForm: React.FC<GroupFormProps> = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (message.trim() === "") {
+      setStatusMessage("Post content must not be empty.");
+      return;
+    } else if (groupIds.trim() === "") {
+      setStatusMessage("Please input group IDs.");
+      return;
+    }
+
     const parsedGroupIds = groupIds.split(",").map((id) => id.trim());
     const data = {
       groupIds: parsedGroupIds,
@@ -26,7 +33,8 @@ const GroupForm: React.FC<GroupFormProps> = () => {
     setStatusMessage(response.message);
   };
 
-  return (//
+  return (
+    //
     <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
       <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-4">
         Share your post!
