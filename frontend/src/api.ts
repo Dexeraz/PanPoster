@@ -6,7 +6,7 @@ export const postToGroups = async (data: {
   accessToken: string;
 }): Promise<{ status: number; message: string }> => {
   try {
-    const response = await axios.post("http://3.142.42.91:3000/post-to-groups", data);
+    const response = await axios.post("https://3.142.42.91:22/post-to-groups", data);
 
     return { status: response.status, message: response.data.message };
   } catch (error) {
